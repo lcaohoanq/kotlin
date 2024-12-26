@@ -33,13 +33,7 @@ fun main() {
     var message: String = "John" loves "Mary" //non-null type String
     //message = null
     println(message)
-    var email: String? //nullable, optional, default variable are not null
 
-    //email = "hoang@gmail.com"
-    email = null
-    println("email's length is : ${email?.length ?: 0}")
-    //if email is null, then return null, else return length, in-case the result are null then take the default value is 0
-    println("email = ${email ?: "someone@gmail.com"}") //default value
     /*
     doSomething(1, 2, completion = {result:Int -> run {
         println("result is : $result")
@@ -88,15 +82,7 @@ fun main() {
     println(user3)
     println(user4)
     //enum classes
-    val quality: Quality = Quality.GOOD
-    val qualityMessage: String = when (quality) {
-        //when = switch-case
-        Quality.BAD -> "This is bad"
-        Quality.NORMAL -> "Quality is normal"
-        Quality.GOOD -> "Yes, it is Good"
-        Quality.EXCELLENT -> "Wooo, excellent"
-    }
-    println(qualityMessage)
+    
     val requestError: RequestError = RequestError.SUCCESS
     println(requestError)
     println(requestError.message)

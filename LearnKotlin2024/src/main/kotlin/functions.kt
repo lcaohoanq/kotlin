@@ -2,6 +2,18 @@ import models.Bicycle
 import models.Car
 import models.Vehicle
 
+fun main(){
+    myFunction(5) //10
+}
+
+//shadowing function
+fun myFunction(a: Int){
+    val a = 10
+    println(a) //10
+    // pass a value to this function, but it is not used
+    // the variable is shadowed by the local variable
+}
+
 //Void Function: Can be omitted the Unit return type
 fun sayHello(name: String):Unit {
     println("Hello "+name)
