@@ -1,6 +1,23 @@
+package collections/*
+    Immutable List: list of elements that cannot be modified
+    - listOf: create an immutable list
+    - Access elements using indexing
+    - Iterate over the list using for loop, forEach, listIterator
+   
+    Mutable List: list of elements that can be modified
+    - mutableListOf: create a mutable list
+    - Manipulate elements using add, remove, and set
+    - Iterate over the list using for loop, forEach, listIterator
+*/
+
+import models.Car
+
 fun immutableList() {
-    // Immutable list
     val fruits = listOf("Apple", "Banana", "Cherry")
+
+    val anyTypes: List<Any> = listOf(1, 2, "hello", 3.0, Car("GLB 200 7G-DCT", 82020, 1.3f, 163), true)
+    println(anyTypes.size)
+    println(anyTypes)
 
     // Accessing elements
     println(fruits) //[Apple, Banana, Cherry]
@@ -15,9 +32,11 @@ fun immutableList() {
 
     // Iterating over the list
     for (fruit in fruits) {
-        print("""
+        print(
+            """
             $fruit, 
-        """.trimIndent())
+        """.trimIndent()
+        )
     }
 
     // Checking if the list contains a specific element
@@ -68,12 +87,20 @@ fun mutableList() {
     // Adding elements
     vegetables.add("Potato")
     vegetables.add(1, "Tomato")  // Insert at a specific index
+    vegetables.addAll(listOf("Cabbage", "Lettuce"))  // Add multiple elements
 
     // Modifying elements
+    /*
+        The val keyword ensures that vegetables will always point to the same list object, 
+        meaning you cannot reassign vegetables to a different list or object.However, since mutableListOf creates a mutable list,
+        the contents of the list can be changed. You can add, remove, or modify elements within the list without changing the reference itself.
+    */
     vegetables[0] = "Cucumber"
+    vegetables.removeAt(2)  // Remove element at index 2
+    //vegetables.removeAll(vegetables) //[] 
     println("Demo shuffle")
     vegetables.shuffle()  // Shuffle the elements
-    println(vegetables) 
+    println(vegetables)
 
     // Removing elements
     vegetables.remove("Spinach")
@@ -83,12 +110,76 @@ fun mutableList() {
     for (vegetable in vegetables) {
         println(vegetable)
     }
-    
+
     vegetables.forEach(::println)
 //    vegetables.forEach { println(ed) }
     vegetables.forEach { it -> println(it) }
     vegetables.forEach { println(it) } //it is default name of lambda parameter
 
+    var someNumbers = mutableListOf<Int>(1, 3, 4, -2, 5, -3, 7)
+    someNumbers.forEach {
+        print("$it ")
+    }
+    if (someNumbers.any { it < 0 }) {
+        println("At least 1 item is negative")
+    }
+    if (someNumbers.all { it < 100 }) {
+        println("All items are < 100")
+    }
+    if (someNumbers.none { it == 100 }) {
+        println("No item has value = 100")
+    }
+    val someFloats = mutableListOf<Float>(3.5f, 2.3f, 4.6f, 1.8f)
+    someFloats[0] = 22.2f
+    println(someFloats)
+    var cars = mutableListOf<Car>(
+        Car("GLB 200 7G-DCT", 82020, 1.3f, 163),
+        Car("GLB 200 d 8G-DCT", 2020, 119f, 150),
+        Car("Lexus CT200H F SPORT", 2014, 109.7f, 136),
+        Car("Lexus CT200H Hybrid", 2018, 119f, 150),
+        Car(
+            "Jetta Advance 1.6 TDI 105HP BlueMotion Technology DSG 7",
+            2011, 97.5f, 105
+        ),
+        Car("Jetta Sport 1.4 TSI 160HP DSG 7 speed", 2011, 84.8f, 160),
+        Car("Bentley Flying Spur W12", 2013, 243.7f, 528),
+        Car("Bentley Brooklands 2008", 2007, 412.6f, 537),
+        Car("Continental GTC 6.0 W12", 2019, 363.1f, 635),
+        Car("Qashqai DIG-T 158 4WD Auto", 2021, 81.3f, 158),
+        Car("Nissan Laurel JC32 2.8 D", 2020, 172.5f, 90),
+    )
+    println(cars)
+    println("Add 1 car to the first item")
+    cars.add(0, Car("Nissan Murano Z50 3.5 (234HP)", 2004, 213.5f, 234))
+    println("Add to the last item")
+    cars.add(Car("Bentley 8 Litre", 1930, 487.2f, 230))
+    cars.forEach {
+        println(it)
+    }
+    //filter cars which year is between 2013 and 2016
+    var filteredCars = cars.filter { it.year in 2013..2016 }
+    //find cars which name contains "lexus"
+    filteredCars = cars.filter { it.name.contains("lexus", ignoreCase = true) }
+    println("filtered cars:")
+    for (item in filteredCars) {
+        println(item)
+    }
+    println("sort the list, by horsePower")
+    //var sortedCars = cars.sortedBy { it.horsePower }
+    val sortedCars = cars.sortedByDescending { it.horsePower }
+    sortedCars.forEach {
+        println(it)
+    }
+    //get car's name and add to a separated list
+    val carNames = cars.map { it.name }
+    carNames.forEach { println(it) }
+    println("There are ${carNames.count()} cars")
+    println("First name: ${carNames.first()}, last name: ${carNames.last()}")
+    //split/partition a list
+    var (newerCars, olderCars) = cars.partition { it.year > 2019 }
+    //minimum, maximum
+    println(cars.minOf { it.horsePower })
+    println(cars.maxOf { it.horsePower })
 }
 
 fun listMixed() {

@@ -5,13 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1ae45386-0cba-40b3-ad6d-25cb924ce2e5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/conditions.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/leetcode/twosum.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/loops.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/nullable.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/casts.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/collections.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/collections/arraylists.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/collections/maps.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/collections/sets.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/delegates.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/exceptions.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/interfaces.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/lambda.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/modifiers.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/classtypes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/classtypes.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/datatypes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/datatypes.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/functions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/functions.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/lists.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/collections/lists.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/loops.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/loops.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/main.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,11 +71,15 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Kotlin.ClasstypesKt.executor": "Run",
+    "Kotlin.CollectionsKt.executor": "Run",
     "Kotlin.ConditionsKt.executor": "Run",
+    "Kotlin.ExceptionsKt.executor": "Run",
     "Kotlin.FunctionsKt.executor": "Run",
     "Kotlin.LoopsKt.executor": "Run",
     "Kotlin.MainKt.executor": "Run",
+    "Kotlin.MapsKt.executor": "Run",
     "Kotlin.NullableKt.executor": "Run",
+    "Kotlin.SetsKt.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -86,7 +99,12 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Kotlin.ClasstypesKt">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/kotlin/collections" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Kotlin.ExceptionsKt">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
       <option name="appServicePlanName" />
@@ -124,29 +142,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ConditionsKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ConditionsKt" />
+    <configuration name="CollectionsKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="CollectionsKt" />
       <module name="consoleApp" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FunctionsKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="FunctionsKt" />
+    <configuration name="ExceptionsKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ExceptionsKt" />
       <module name="consoleApp" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoopsKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="LoopsKt" />
+    <configuration name="MapsKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="collections.MapsKt" />
       <module name="consoleApp" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NullableKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="NullableKt" />
+    <configuration name="SetsKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="collections.SetsKt" />
       <module name="consoleApp" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -154,11 +172,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.ExceptionsKt" />
+        <item itemvalue="Kotlin.MapsKt" />
+        <item itemvalue="Kotlin.SetsKt" />
+        <item itemvalue="Kotlin.CollectionsKt" />
         <item itemvalue="Kotlin.ClasstypesKt" />
-        <item itemvalue="Kotlin.FunctionsKt" />
-        <item itemvalue="Kotlin.NullableKt" />
-        <item itemvalue="Kotlin.ConditionsKt" />
-        <item itemvalue="Kotlin.LoopsKt" />
       </list>
     </recent_temporary>
   </component>
@@ -186,6 +204,7 @@
       <workItem from="1735205145909" duration="1189000" />
       <workItem from="1735206418905" duration="52000" />
       <workItem from="1735223860294" duration="6056000" />
+      <workItem from="1735261347096" duration="6972000" />
     </task>
     <servers />
   </component>

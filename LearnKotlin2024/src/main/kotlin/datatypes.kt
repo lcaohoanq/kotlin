@@ -1,4 +1,20 @@
 fun getDataType() {
+
+    println("Hello world")
+    var x = 5 //this is a variable
+    var m: Int = 120
+    println("x is : $x, a = $m")
+    //you can change value of a variable
+    x = 6
+    println("x now is : $x")
+    val y = 44 //val = cannot be assigned
+    //y = 55
+    //function = a block of code
+    sayHello("Hoang")
+    println("sum 2 and 3 is : ${sum(2.0, 3.0)}")
+    //you can use labeled arguments
+    println("sum 4 and 5 is : ${sum(x = 4.0, y = 5.0)}")
+    
     // Data types
     val a: Int = 10000
     val d: Double = 100.00

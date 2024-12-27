@@ -1,3 +1,4 @@
+import com.sun.org.apache.bcel.internal.generic.NEW
 import java.util.UUID
 
 //can omit the public constructor keyword
@@ -87,12 +88,35 @@ abstract class Person {
     abstract fun sayHello()
 }
 
-// nested class
+// nested class: in Kotlin, nested class is static by default, 
+// so its data member and member function can be accessed without creating an object of the class
+// nested class cannot access the outer class's members
 class School {
     data class Student(
         val id: String,
         val name: String
     )
+}
+
+// inner class: nested class which is marked as "inner" is called inner class
+// the advantages is inner class can access the outer class's members even if it is private
+class School2 {
+    
+    private val schoolName = "ABC School"
+    
+    inner class Student(
+        val id: String,
+        val name: String
+    ){
+        fun createStudent(){
+            var student = Student("1", "John")
+            println("""
+                |Student: ${student.id}
+                |Name: ${student.name}
+                |School: $schoolName
+            """.trimMargin())
+        }
+    }
 }
 
 data class Student(
@@ -165,5 +189,26 @@ fun main() {
             name = "The Avengers"
         }
     }
-
+    
+    //define an object from class
+    val user1 = models.User(1, "hoang", "sunlight4d@gmail.com")
+    val duong = models.User(1, "hoang", "sunlight4d@gmail.com")
+    //2 data objects with the same values => the same hashcode
+    println(user1.hashCode())
+    println(duong.hashCode())
+    if (user1.equals(duong)) {
+        println("user1 and duong has the same content")
+    }
+    user1.name = "John"
+    println(user1) //you can change property's value of a "val" object
+    //but you cannot reference to another object / cannot be reassigned
+    //user1 = User(2, "tony", "tony@gmail.com")
+    val user3 = models.User(3, "mary", "mary@gmail.com")
+    //clone this object
+    //val user4 = user3.copy()
+    //clones and changes properties
+    val user4 = user3.copy(email = "mary123@gmail.com")
+    println(user3)
+    println(user4)
+    
 }

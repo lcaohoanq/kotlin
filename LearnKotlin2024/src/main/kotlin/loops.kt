@@ -1,5 +1,10 @@
+import collections.immutableList
+
 fun main(){
     loops()
+    
+    //looping through a list
+    immutableList()
 }
 
 fun loops(){

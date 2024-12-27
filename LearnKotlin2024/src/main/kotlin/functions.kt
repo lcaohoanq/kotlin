@@ -4,6 +4,45 @@ import models.Vehicle
 
 fun main(){
     myFunction(5) //10
+
+    // infix functions
+    val z = 12 plus 5
+    println("z = $z")
+    println("5 + 3 is : ${5 plus 3}")
+    println("6 times 5 = ${6 times 5}")
+    var message: String = "John" loves "Mary" //non-null type String
+    //message = null
+    println(message)
+
+    showColor(255, 0, 0, 0.5f) //double not need f suffix
+    like("apple", "orange", "pineapple", "kiwi")
+
+    /*
+    doSomething(1, 2, completion = {result:Int -> run {
+        println("result is : $result")
+    }})
+     */
+    //more simpler way
+    /*
+    doSomething(1, 3) {result:Int ->
+        run {
+            println("result is : $result")
+        }
+    }
+    */
+    //simplest way
+    doSomething(2, 3) {
+        println("result is: $it") //item
+    }
+    println("operation = ${operation(x = 10.0f)(20.0f)}")
+    println("Full name = ${getFullName("Nguyen", "Duc Hoang")}")
+    println(url(1, 200))
+    println(squaredNumber(30))
+    url(1, 200).let { //the let function is used to execute a block of code on a non-null object
+        println("It means that url is NOT NULL")
+        println(it) //default name of the object is "it", this will take the value is the return value of the previous function
+        println("Do more ...")
+    }
 }
 
 //shadowing function
