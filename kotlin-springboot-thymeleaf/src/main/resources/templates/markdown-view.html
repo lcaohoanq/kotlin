@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Markdown Viewer</title>
+  <!-- Add PrismJS CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet" />
+  <style>
+    .markdown-content {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+    pre[class*="language-"] {
+      margin: 1em 0;
+      border-radius: 4px;
+      box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    }
+    code[class*="language-"] {
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+<div class="markdown-content" th:utext="${content}">
+</div>
+
+<!-- Add PrismJS JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+<script>
+  // Reinitialize Prism after content loads
+  document.addEventListener('DOMContentLoaded', (event) => {
+    Prism.highlightAll();
+  });
+</script>
+</body>
+</html>
